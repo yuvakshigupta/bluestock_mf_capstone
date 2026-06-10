@@ -1,0 +1,11 @@
+dataset,rows,columns,nulls,duplicates
+fund_master,40,15,0,0
+nav_history,46000,3,0,0
+aum,90,5,0,0
+sip,48,6,12,0
+category,144,3,0,0
+folio,21,6,0,0
+performance,40,19,0,0
+transactions,32778,13,0,0
+holdings,322,8,0,0
+benchmark,8050,3,0,0
