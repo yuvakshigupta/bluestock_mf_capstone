@@ -39,7 +39,10 @@ print("\nDatasets loaded successfully.")
 
 print("\nCleaning NAV History...")
 
-nav_df["date"] = pd.to_datetime(nav_df["date"])
+nav_df["date"] = pd.to_datetime(
+    nav_df["date"],
+    format="mixed"
+)
 
 nav_df = nav_df.sort_values(
     ["amfi_code", "date"]
@@ -94,7 +97,9 @@ print("NAV cleaning completed.")
 print("\nCleaning Transactions...")
 
 txn_df["transaction_date"] = pd.to_datetime(
-    txn_df["transaction_date"]
+    txn_df["transaction_date"],
+    format="mixed",
+    errors="coerce"
 )
 
 txn_df["transaction_type"] = (
@@ -248,27 +253,39 @@ print(missing_codes)
 print("\nCleaning Remaining Datasets...")
 
 aum_df["date"] = pd.to_datetime(
-    aum_df["date"]
+    aum_df["date"],
+    format="mixed",
+    errors="coerce"
 )
 
 sip_df["month"] = pd.to_datetime(
-    sip_df["month"]
+    sip_df["month"],
+    format="mixed",
+    errors="coerce"
 )
 
 category_df["month"] = pd.to_datetime(
-    category_df["month"]
+    category_df["month"],
+    format="mixed",
+    errors="coerce"
 )
 
 folio_df["month"] = pd.to_datetime(
-    folio_df["month"]
+    folio_df["month"],
+    format="mixed",
+    errors="coerce"
 )
 
 benchmark_df["date"] = pd.to_datetime(
-    benchmark_df["date"]
+    benchmark_df["date"],
+    format="mixed",
+    errors="coerce"
 )
 
 holdings_df["portfolio_date"] = pd.to_datetime(
-    holdings_df["portfolio_date"]
+    holdings_df["portfolio_date"],
+    format="mixed",
+    errors="coerce"
 )
 
 # =====================================================
